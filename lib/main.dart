@@ -1,5 +1,8 @@
+import 'package:ciyo_app/pages/page1.dart';
+import 'package:ciyo_app/pages/page2.dart';
+import 'package:ciyo_app/pages/page3.dart';
 import 'package:ciyo_app/screens/login_screen.dart';
-import 'package:ciyo_app/screens/onbording_screen_1.dart';
+import 'package:ciyo_app/screens/onbording_screen.dart';
 import 'package:ciyo_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,12 +18,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'SFProText'),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/onbordingscreen1",
+      initialRoute: "/onbordingscreen",
       routes: {
         "/": (context) => const SplashScreen(),
         "/splashscreen": (context) => const SplashScreen(),
-        "/onbordingscreen1": (context) => const OnBordingScreen1(),
+        "/onbordingscreen": (context) => const OnBordingScreen(),
         "/loginscreen": (context) => const LoginScreen(),
+        "/page1": (context) => const Page1(),
+        "/page2": (context) => const Page2(),
+        "/page3": (context) => const Page3(),
       },
     );
   }
