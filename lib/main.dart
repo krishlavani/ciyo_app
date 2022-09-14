@@ -3,6 +3,7 @@ import 'package:ciyo_app/pages/page2.dart';
 import 'package:ciyo_app/pages/page3.dart';
 import 'package:ciyo_app/screens/login_screen.dart';
 import 'package:ciyo_app/screens/onbording_screen.dart';
+import 'package:ciyo_app/screens/sign_up_screen.dart';
 import 'package:ciyo_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'SFProText'),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/onbordingscreen",
+      initialRoute: "/signupscreen",
       routes: {
         "/": (context) => const SplashScreen(),
         "/splashscreen": (context) => const SplashScreen(),
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         "/page1": (context) => const Page1(),
         "/page2": (context) => const Page2(),
         "/page3": (context) => const Page3(),
+        "/signupscreen": (context) => const SignUpScreen(),
       },
     );
   }

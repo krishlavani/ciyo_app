@@ -17,6 +17,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
   final _controller = PageController();
 
   int num = 0;
+  static bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +56,10 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                   dotColor: Colors.white,
                 ),
               ),
-              Column(
-                children: const [
-                  GetStartedButton(),
-                ],
-              ),
+              Container(
+                child:
+                    isVisible == true ? const GetStartedButton() : Container(),
+              )
             ],
           ),
         ],

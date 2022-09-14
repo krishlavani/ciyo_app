@@ -1,14 +1,14 @@
 import 'package:ciyo_app/const/colors.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   bool _isHidden = true;
   @override
   Widget build(BuildContext context) {
@@ -25,29 +25,49 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.only(top: 100),
+              padding: const EdgeInsets.only(top: 200),
               child: SizedBox(
                 width: double.infinity,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    SizedBox(
-                      height: 182,
-                      width: 182,
-                      child: Image.asset(
-                        "assets/images/login.png",
+                    const Text(
+                      "Welcome !",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 36,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const Text(
+                      "Create account to explore",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        fontSize: 18,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
-                    const Text(
-                      "Login",
-                      style: TextStyle(
-                        fontFamily: 'SFProText',
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white,
-                        fontSize: 22,
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 1.15,
+                      child: TextField(
+                        style: const TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: primary),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: primary),
+                          ),
+                          hintText: "Username",
+                          hintStyle: const TextStyle(color: Colors.white),
+                          labelText: "Username",
+                          labelStyle: const TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -66,9 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(10),
                             borderSide: const BorderSide(color: primary),
                           ),
-                          hintText: "Username",
+                          hintText: "Email",
                           hintStyle: const TextStyle(color: Colors.white),
-                          labelText: "Username",
+                          labelText: "Email address",
                           labelStyle: const TextStyle(color: Colors.white),
                         ),
                       ),
@@ -105,31 +125,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "Forgot Password?",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        )
-                      ],
-                    ),
                     const SizedBox(
-                      height: 20,
+                      height: 70,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         fixedSize: const Size(340, 50),
                         backgroundColor: primary,
                       ),
-                      onPressed: () {},
-                      child: const Text("SIGN IN"),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/loginscreen");
+                      },
+                      child: const Text("SIGN UP"),
                     ),
                     const SizedBox(
                       height: 20,
@@ -138,17 +145,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          "Don't have an account ?",
+                          "Already have an account ?",
                           style: TextStyle(
                             color: Colors.white,
                           ),
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, "/signupscreen");
+                            Navigator.pushNamed(context, "/loginscreen");
                           },
                           child: const Text(
-                            "Sign Up",
+                            "Sign In",
                             style: TextStyle(color: primary),
                           ),
                         ),
