@@ -2,6 +2,7 @@ import 'package:ciyo_app/const/colors.dart';
 import 'package:ciyo_app/pages/page1.dart';
 import 'package:ciyo_app/pages/page2.dart';
 import 'package:ciyo_app/pages/page3.dart';
+import 'package:ciyo_app/widget/get_started.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -55,17 +56,8 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                 ),
               ),
               Column(
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(300, 50),
-                      primary: primary,
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/loginscreen");
-                    },
-                    child: const Text("GET STARTED"),
-                  )
+                children: const [
+                  GetStartedButton(),
                 ],
               ),
             ],
