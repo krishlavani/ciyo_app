@@ -76,9 +76,30 @@ class PageHome extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 5,
+              ),
             ],
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Charts",
+                  style: TextStyle(
+                    fontFamily: 'SFProText',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                ),
+                TextButton(onPressed: () {}, child: const Text("See all"))
+              ],
+            ),
+          ),
         ],
       ),
     );
