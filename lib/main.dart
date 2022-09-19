@@ -1,6 +1,3 @@
-// import 'package:ciyo_app/screens/pages/page1.dart';
-// import 'package:ciyo_app/screens/pages/page2.dart';
-// import 'package:ciyo_app/screens/pages/page3.dart';
 import 'package:ciyo_app/screens/pages/page_home.dart';
 import 'package:ciyo_app/screens/pages/page_search.dart';
 import 'package:ciyo_app/screens/pages/page_setting.dart';
@@ -26,14 +23,11 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SFProText',
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/onbordingscreen",
+      // initialRoute: "/onbordingscreen",
       routes: {
         "/": (context) => const SplashScreen(),
         "/onbordingscreen": (context) => const OnBordingScreen(),
         "/loginscreen": (context) => const LoginScreen(),
-        // "/page1": (context) => const Page1(),
-        // "/page2": (context) => const Page2(),
-        // "/page3": (context) => const Page3(),
         "/signupscreen": (context) => const SignUpScreen(),
         "/homescreen": (context) => const HomeScreen(),
         "/homepage": (context) => const PageHome(),
