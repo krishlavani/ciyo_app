@@ -1,10 +1,10 @@
-import 'package:ciyo_app/pages/page1.dart';
-import 'package:ciyo_app/pages/page2.dart';
-import 'package:ciyo_app/pages/page3.dart';
-import 'package:ciyo_app/pages/page_home.dart';
-import 'package:ciyo_app/pages/page_search.dart';
-import 'package:ciyo_app/pages/page_setting.dart';
-import 'package:ciyo_app/pages/page_wallet.dart';
+// import 'package:ciyo_app/screens/pages/page1.dart';
+// import 'package:ciyo_app/screens/pages/page2.dart';
+// import 'package:ciyo_app/screens/pages/page3.dart';
+import 'package:ciyo_app/screens/pages/page_home.dart';
+import 'package:ciyo_app/screens/pages/page_search.dart';
+import 'package:ciyo_app/screens/pages/page_setting.dart';
+import 'package:ciyo_app/screens/pages/page_wallet.dart';
 import 'package:ciyo_app/screens/home_screen.dart';
 import 'package:ciyo_app/screens/login_screen.dart';
 import 'package:ciyo_app/screens/onbording_screen.dart';
@@ -26,15 +26,14 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SFProText',
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/homescreen",
+      initialRoute: "/onbordingscreen",
       routes: {
         "/": (context) => const SplashScreen(),
-        "/splashscreen": (context) => const SplashScreen(),
         "/onbordingscreen": (context) => const OnBordingScreen(),
         "/loginscreen": (context) => const LoginScreen(),
-        "/page1": (context) => const Page1(),
-        "/page2": (context) => const Page2(),
-        "/page3": (context) => const Page3(),
+        // "/page1": (context) => const Page1(),
+        // "/page2": (context) => const Page2(),
+        // "/page3": (context) => const Page3(),
         "/signupscreen": (context) => const SignUpScreen(),
         "/homescreen": (context) => const HomeScreen(),
         "/homepage": (context) => const PageHome(),

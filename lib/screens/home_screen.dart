@@ -1,22 +1,21 @@
-import 'package:ciyo_app/const/colors.dart';
-import 'package:ciyo_app/pages/page_home.dart';
-import 'package:ciyo_app/pages/page_search.dart';
-import 'package:ciyo_app/pages/page_setting.dart';
-import 'package:ciyo_app/pages/page_wallet.dart';
+import 'package:ciyo_app/screens/pages/page_home.dart';
+import 'package:ciyo_app/screens/pages/page_search.dart';
+import 'package:ciyo_app/screens/pages/page_setting.dart';
+import 'package:ciyo_app/screens/pages/page_wallet.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
   int pageIndex = 0;
 
   final pages = [
-    const PageHome(),
+    PageHome(),
     const PageSearch(),
     const PageWallet(),
     const PageSetting(),
@@ -78,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 0
                   ? const ImageIcon(
                       AssetImage("assets/images/Home.png"),
-                      color: Colors.white,
+                      color: Colors.yellow,
                       size: 35,
                     )
                   : const ImageIcon(
@@ -97,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 1
                   ? const ImageIcon(
                       AssetImage("assets/images/Search.png"),
-                      color: Colors.white,
+                      color: Colors.yellow,
                       size: 35,
                     )
                   : const ImageIcon(
@@ -116,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 2
                   ? const ImageIcon(
                       AssetImage("assets/images/wallet.png"),
-                      color: Colors.white,
+                      color: Colors.yellow,
                       size: 35,
                     )
                   : const ImageIcon(
@@ -135,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 3
                   ? const ImageIcon(
                       AssetImage("assets/images/Setting.png"),
-                      color: Colors.white,
+                      color: Colors.yellow,
                       size: 35,
                     )
                   : const ImageIcon(
