@@ -10,6 +10,21 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   bool _isHidden = true;
+
+  String name = "";
+  String email = "";
+  String password = "";
+
+  final _formkey = GlobalKey<FormState>();
+
+  moveToHome(BuildContext context) async {
+    if (_formkey.currentState!.validate()) {
+      setState(() {});
+      Navigator.pushNamed(context, '/loginscreen');
+      setState(() {});
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +41,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.only(top: 200),
-              child: SizedBox(
-                width: double.infinity,
+              child: Form(
+                key: _formkey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -52,7 +67,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 1.15,
-                      child: TextField(
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Username cannot be empty";
+                          }
+                          if (RegExp(r"^[!@#$%&*+=]").hasMatch(value)) {
+                            return "special character not valid.";
+                          }
+                          if (!RegExp(r"^[a-zA-Z0-9_.]").hasMatch(value)) {
+                            return "Please enter valid Username";
+                          }
+
+                          return null;
+                        },
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -68,6 +96,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           labelText: "Username",
                           labelStyle: const TextStyle(color: Colors.white),
                         ),
+                        onChanged: (value) {
+                          email = value;
+                          setState(() {});
+                        },
+                        textInputAction: TextInputAction.next,
                       ),
                     ),
                     const SizedBox(
@@ -75,7 +108,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 1.15,
-                      child: TextField(
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Email cannot be empty";
+                          }
+                          if (!RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                          ).hasMatch(value)) {
+                            return "Please enter valid Email";
+                          }
+                          return null;
+                        },
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -91,6 +135,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           labelText: "Email address",
                           labelStyle: const TextStyle(color: Colors.white),
                         ),
+                        onChanged: (value) {
+                          email = value;
+                          setState(() {});
+                        },
+                        textInputAction: TextInputAction.next,
                       ),
                     ),
                     const SizedBox(
@@ -98,7 +147,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 1.15,
-                      child: TextField(
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return "Password cannot be Empty";
+                          }
+                          if (!RegExp(r'.{8,}$').hasMatch(value)) {
+                            return "Password length should be atleast 8";
+                          }
+                          if (!RegExp(r'^(?=.*?[A-Z])').hasMatch(value)) {
+                            return "Please enter one character in Uppercase.";
+                          }
+                          if (!RegExp(r'(?=.*?[a-z])').hasMatch(value)) {
+                            return "Please enter one character in Lowercase.";
+                          }
+                          if (!RegExp(r'(?=.*?[!@#\$&*~])').hasMatch(value)) {
+                            return "Please enter one Special character.";
+                          }
+                          if (!RegExp(r'(?=.*?[0-9])').hasMatch(value)) {
+                            return "Please enter Numeric character.";
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          password = value;
+                          setState(() {});
+                        },
+                        textInputAction: TextInputAction.go,
                         style: const TextStyle(color: Colors.white),
                         obscureText: _isHidden ? true : false,
                         decoration: InputDecoration(
@@ -133,9 +208,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fixedSize: const Size(340, 50),
                         backgroundColor: primary,
                       ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, "/loginscreen");
-                      },
+                      onPressed: () => moveToHome(context),
                       child: const Text("SIGN UP"),
                     ),
                     const SizedBox(
