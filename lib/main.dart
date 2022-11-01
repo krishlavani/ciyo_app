@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
         fontFamily: 'SFProText',
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/signupscreen",
+      // initialRoute: "/homescreen",
       routes: {
-        // "/": (context) => const SplashScreen(),
+        "/": (context) => const SplashScreen(),
         "/onbordingscreen": (context) => const OnBordingScreen(),
         "/loginscreen": (context) => const LoginScreen(),
         "/signupscreen": (context) => const SignUpScreen(),

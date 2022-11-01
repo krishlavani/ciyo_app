@@ -17,12 +17,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   final _formkey = GlobalKey<FormState>();
 
+  _generateData() {
+    // var
+  }
+
   moveToHome(BuildContext context) async {
     if (_formkey.currentState!.validate()) {
       setState(() {});
       Navigator.pushNamed(context, '/loginscreen');
       setState(() {});
     }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _generateData();
   }
 
   @override
@@ -208,7 +219,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fixedSize: const Size(340, 50),
                         backgroundColor: primary,
                       ),
-                      onPressed: () => moveToHome(context),
+                      onPressed: () {
+                        moveToHome(context);
+                        Navigator.pushNamed(context, "/loginscreen");
+                      },
                       child: const Text("SIGN UP"),
                     ),
                     const SizedBox(
@@ -249,4 +263,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       _isHidden = !_isHidden;
     });
   }
+}
+
+class Task {
+  String task;
+  double taskvalue;
+  Color colorvalue;
+
+  Task(this.colorvalue, this.task, this.taskvalue);
 }

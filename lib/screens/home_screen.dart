@@ -15,7 +15,7 @@ class HomeScreenState extends State<HomeScreen> {
   int pageIndex = 0;
 
   final pages = [
-    PageHome(),
+    const PageHome(),
     const PageSearch(),
     const PageWallet(),
     const PageSetting(),
@@ -77,7 +77,7 @@ class HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 0
                   ? const ImageIcon(
                       AssetImage("assets/images/Home.png"),
-                      color: Colors.yellow,
+                      color: Colors.red,
                       size: 35,
                     )
                   : const ImageIcon(
@@ -96,7 +96,7 @@ class HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 1
                   ? const ImageIcon(
                       AssetImage("assets/images/Search.png"),
-                      color: Colors.yellow,
+                      color: Colors.red,
                       size: 35,
                     )
                   : const ImageIcon(
@@ -115,7 +115,7 @@ class HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 2
                   ? const ImageIcon(
                       AssetImage("assets/images/wallet.png"),
-                      color: Colors.yellow,
+                      color: Colors.red,
                       size: 35,
                     )
                   : const ImageIcon(
@@ -134,7 +134,7 @@ class HomeScreenState extends State<HomeScreen> {
               icon: pageIndex == 3
                   ? const ImageIcon(
                       AssetImage("assets/images/Setting.png"),
-                      color: Colors.yellow,
+                      color: Colors.red,
                       size: 35,
                     )
                   : const ImageIcon(

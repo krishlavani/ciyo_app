@@ -17,12 +17,15 @@ class ItemWidget extends StatelessWidget {
         onTap: () {
           print("${item.title} pressed.");
         },
-        leading: SizedBox(
+        leading: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+          ),
           height: 50,
           width: 50,
           child: Image.network(
             item.img,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
         title: Text(

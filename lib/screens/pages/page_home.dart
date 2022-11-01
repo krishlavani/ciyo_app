@@ -26,6 +26,7 @@ class _PageHomeState extends State<PageHome> {
     CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
         .toList();
+    setState(() {});
   }
 
   @override
@@ -43,13 +44,16 @@ class _PageHomeState extends State<PageHome> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "TOTAL BALANCE",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
-                fontFamily: 'SFProText',
+            const Padding(
+              padding: EdgeInsets.only(top: 200),
+              child: Text(
+                "TOTAL BALANCE",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                  fontFamily: 'SFProText',
+                ),
               ),
             ),
             const SizedBox(

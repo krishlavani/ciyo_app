@@ -28,7 +28,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
             ),
           ),
           num == 0
-              ? Center(
+              ? Center( 
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

@@ -185,7 +185,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         fixedSize: const Size(340, 50),
                         backgroundColor: primary,
                       ),
-                      onPressed: () => moveToHome(context),
+                      onPressed: () {
+                        moveToHome(context);
+                        Navigator.pushNamed(context, "/homescreen");
+                      },
                       child: const Text("SIGN IN"),
                     ),
                     const SizedBox(

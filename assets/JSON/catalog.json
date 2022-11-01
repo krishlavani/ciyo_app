@@ -10,7 +10,7 @@
       "id" : 2,
       "title":"Australia",
       "text":"Canberra",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg"
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Flag_of_Australia.svg/1920px-Flag_of_Australia.svg.png"
     },
     {
       "id" : 3,
@@ -28,7 +28,7 @@
       "id" : 5,
       "title":"Germany",
       "text":"Berlin",
-      "img": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg"
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png"
     },
     {
       "id" : 6,

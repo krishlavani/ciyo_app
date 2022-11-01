@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class CatalogModel {
   static List<Item> items = [
     Item(
@@ -22,19 +24,60 @@ class Item {
     required this.img,
   });
 
-  factory Item.fromMap(Map<String, dynamic> map) {
+  Item copyWith({
+    int? id,
+    String? title,
+    String? text,
+    String? img,
+  }) {
     return Item(
-      id: map["id"],
-      title: map["title"],
-      text: map["text"],
-      img: map["img"],
+      id: id ?? this.id,
+      title: title ?? this.title,
+      text: text ?? this.text,
+      img: img ?? this.img,
     );
   }
 
-  toMap() => {
-        "id": id,
-        "title": title,
-        "text": text,
-        "img": img,
-      };
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'title': title,
+      'text': text,
+      'img': img,
+    };
+  }
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+      id: map['id']?.toInt() ?? 0,
+      title: map['title'] ?? '',
+      text: map['text'] ?? '',
+      img: map['img'] ?? '',
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Item.fromJson(String source) => Item.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'Item(id: $id, title: $title, text: $text, img: $img)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Item &&
+        other.id == id &&
+        other.title == title &&
+        other.text == text &&
+        other.img == img;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^ title.hashCode ^ text.hashCode ^ img.hashCode;
+  }
 }
